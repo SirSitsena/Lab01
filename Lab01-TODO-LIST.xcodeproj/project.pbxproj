@@ -11,6 +11,10 @@
 		BC0E6E28272C117D002CD7F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E6E27272C117D002CD7F1 /* ContentView.swift */; };
 		BC0E6E2A272C117F002CD7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0E6E29272C117F002CD7F1 /* Assets.xcassets */; };
 		BC0E6E2D272C117F002CD7F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0E6E2C272C117F002CD7F1 /* Preview Assets.xcassets */; };
+		BC0E6E34272C13BA002CD7F1 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E6E33272C13BA002CD7F1 /* AddTaskView.swift */; };
+		BC0E6E36272C13D7002CD7F1 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E6E35272C13D7002CD7F1 /* TodoView.swift */; };
+		BC0E6E38272C13E5002CD7F1 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E6E37272C13E5002CD7F1 /* HistoryView.swift */; };
+		BC0E6E3A272C1B64002CD7F1 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E6E39272C1B64002CD7F1 /* TaskManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		BC0E6E27272C117D002CD7F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC0E6E29272C117F002CD7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC0E6E2C272C117F002CD7F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BC0E6E33272C13BA002CD7F1 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		BC0E6E35272C13D7002CD7F1 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		BC0E6E37272C13E5002CD7F1 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BC0E6E39272C1B64002CD7F1 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				BC0E6E25272C117D002CD7F1 /* Lab01_TODO_LISTApp.swift */,
+				BC0E6E39272C1B64002CD7F1 /* TaskManager.swift */,
 				BC0E6E27272C117D002CD7F1 /* ContentView.swift */,
+				BC0E6E33272C13BA002CD7F1 /* AddTaskView.swift */,
+				BC0E6E35272C13D7002CD7F1 /* TodoView.swift */,
+				BC0E6E37272C13E5002CD7F1 /* HistoryView.swift */,
 				BC0E6E29272C117F002CD7F1 /* Assets.xcassets */,
 				BC0E6E2B272C117F002CD7F1 /* Preview Content */,
 			);
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0E6E3A272C1B64002CD7F1 /* TaskManager.swift in Sources */,
+				BC0E6E34272C13BA002CD7F1 /* AddTaskView.swift in Sources */,
 				BC0E6E28272C117D002CD7F1 /* ContentView.swift in Sources */,
+				BC0E6E38272C13E5002CD7F1 /* HistoryView.swift in Sources */,
+				BC0E6E36272C13D7002CD7F1 /* TodoView.swift in Sources */,
 				BC0E6E26272C117D002CD7F1 /* Lab01_TODO_LISTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

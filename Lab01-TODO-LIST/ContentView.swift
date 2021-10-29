@@ -4,13 +4,33 @@
 //
 //  Created by Anestis Cheimonettos on 2021-10-29.
 //
-
 import SwiftUI
 
+
+
 struct ContentView: View {
+
+    @State private var TaskList: [Task] = []
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            
+            AddTaskView(List: $TaskList)
+                .tabItem {
+                    Text("NewTask")
+                    Image(systemName: "pencil")
+                }
+            TodoView()
+                .tabItem {
+                    Text("TODO")
+                    Image(systemName: "list.bullet")
+                }
+            HistoryView()
+                .tabItem {
+                    Text("History")
+                    Image(systemName: "tray.fill")
+                }
+        }
     }
 }
 
