@@ -10,19 +10,19 @@ import SwiftUI
 //@State private var InputText: String = ""
 
 struct AddTaskView: View {
-    @State private var InputText: String = ""
-    var List: [Task] = []
-    @Binding var List: TaskList
+    @State private var inputText: String = ""
+    @Binding  var list: [Task]
     var body: some View {
-        HStack{
-            TextField("Enter the task", text: $InputText, onCommit:{
+        VStack{
+            TextField("Enter the task", text: $inputText, onCommit:{
                 
             } )
                 .multilineTextAlignment(.center)
-                .frame(minWidth: 100, maxWidth: 300, minHeight: 100, maxHeight: .infinity)
+                .frame(minWidth: 100, maxWidth: 300, minHeight: 150)
             
             Button("Create", action:{
-                List.append(Task(TaskDesc: InputText, isActive: true))
+                list.append(Task( taskDesc: inputText, isActive: true ))
+                inputText = ""
             })
         }
         
@@ -31,6 +31,6 @@ struct AddTaskView: View {
 
 struct AddTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskView()
+        AddTaskView( list: .constant([]))
     }
 }

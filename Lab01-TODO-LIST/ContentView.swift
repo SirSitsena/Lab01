@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             
-            AddTaskView(List: $TaskList)
+            AddTaskView(list: $TaskList)
                 .tabItem {
                     Text("NewTask")
                     Image(systemName: "pencil")

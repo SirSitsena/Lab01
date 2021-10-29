@@ -4,25 +4,15 @@
 //
 //  Created by Anestis Cheimonettos on 2021-10-29.
 //
-
-import Darwin
-
+import Foundation
 
 class Task{
-    var TaskDesc: String = ""
+    var taskDesc: String = ""
     var isActive: Bool = true
     //NewTst
     
-    func TaskList(){
-        TaskDesc = ""
-        isActive = true
+    init( taskDesc: String, isActive: Bool ){
+        self.taskDesc = ""
+        self.isActive = true
     }
 }
-
-
-
-
-
-
-
-import Foundation
