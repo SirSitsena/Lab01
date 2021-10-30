@@ -10,17 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var TaskList: [Task] = []
-    
+    @State private var taskList: [Task] = []
     var body: some View {
         TabView {
-            
-            AddTaskView(list: $TaskList)
+            AddTaskView(list: $taskList)
                 .tabItem {
                     Text("NewTask")
                     Image(systemName: "pencil")
                 }
-            TodoView()
+            TodoView(list: $taskList)
                 .tabItem {
                     Text("TODO")
                     Image(systemName: "list.bullet")

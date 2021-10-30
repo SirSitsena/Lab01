@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct TodoView: View {
-//    var TODO: [Task]
+    @Binding  var list: [Task]
     var body: some View {
-        Text("Active tasks list")
-        //List(array, id: \.self) { item in
-        //    Text(item.text)
-        //}
+        
+        VStack{
+//            Button("Show", action: {
+//                list.forEach{ task in
+//                    NSLog("" + task.taskDesc)
+//                }
+//            })
+            ForEach( list, id: \.id  ) {  task in
+                            Text(task.taskDesc)
+            }
+        }
     }
 }
+                        //List(array, id: \.self) { item in
+                        //    Text(item.text)
+                        //}
 
 struct TodoView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoView()
+        TodoView( list: .constant([]))
     }
 }

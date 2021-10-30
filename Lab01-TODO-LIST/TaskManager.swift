@@ -6,13 +6,14 @@
 //
 import Foundation
 
-class Task{
+class Task: Identifiable{
+    var id: UUID
     var taskDesc: String = ""
     var isActive: Bool = true
-    //NewTst
     
-    init( taskDesc: String, isActive: Bool ){
-        self.taskDesc = ""
+    init( taskDesc: String ){
+        self.id = UUID.init()
+        self.taskDesc = taskDesc
         self.isActive = true
     }
 }
