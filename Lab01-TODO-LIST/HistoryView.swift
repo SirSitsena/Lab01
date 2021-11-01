@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @Binding  var list: [Task]
     var body: some View {
-        Text("Old Tasks")
+        VStack{
+//            Button("Show", action: {
+//                list.forEach{ task in
+//                    NSLog("" + task.taskDesc)
+//                }
+//            })
+            ForEach( list, id: \.id  ) {  task in
+                if !task.isActive{
+                    Text(task.taskDesc)
+                }
+                            
+            }
+        }
     }
 }
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        TodoView( list: .constant([]))
     }
 }

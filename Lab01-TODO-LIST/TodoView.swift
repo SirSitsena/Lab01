@@ -18,7 +18,10 @@ struct TodoView: View {
 //                }
 //            })
             ForEach( list, id: \.id  ) {  task in
-                            Text(task.taskDesc)
+                if task.isActive{
+                    Text(task.taskDesc)
+                }
+                            
             }
         }
     }

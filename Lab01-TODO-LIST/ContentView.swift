@@ -23,7 +23,7 @@ struct ContentView: View {
                     Text("TODO")
                     Image(systemName: "list.bullet")
                 }
-            HistoryView()
+            HistoryView(list: $taskList)
                 .tabItem {
                     Text("History")
                     Image(systemName: "tray.fill")
