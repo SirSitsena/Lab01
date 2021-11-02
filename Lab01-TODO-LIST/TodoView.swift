@@ -25,7 +25,8 @@ struct TodoView: View {
                                         found = i
                                     }
                                 }
-                                //git push comit test 
+                                //git push comit test
+                                ////dddd
                                 list[found].isActive = false
                                 list.append(Task( taskDesc: "garbage")) //Create a new task to delete 4triggering refresh
                                 list.remove(at: list.count-1)
