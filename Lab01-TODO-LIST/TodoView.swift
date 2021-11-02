@@ -24,10 +24,10 @@ struct TodoView: View {
                                     if list[i].id == task.id {
                                         found = i
                                     }
-                                }//Test
+                                }
                                 list[found].isActive = false
-                                list.append(Task( taskDesc: "garbage")) //Create a new task to delete 4triggering refresh
-                                list.remove(at: list.count-1)
+                                list.append(Task( taskDesc: "garbage")) //Creates a new task and then
+                                list.remove(at: list.count-1)           //deletes it to trigger refresh
                             })
                         }
                     }
