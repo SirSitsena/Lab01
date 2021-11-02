@@ -37,9 +37,6 @@ struct TodoView: View {
     }
 }
 
-
-
-
 //            Button("Show", action: {
 //                list.forEach{ task in
 //                    NSLog("" + task.taskDesc)
