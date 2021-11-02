@@ -11,8 +11,7 @@ import SwiftUI
 
 struct AddTaskView: View {
     @State private var inputText: String = ""
-    @Binding  var list: [Task]
-    
+    @Binding  var list: [Task]    
 
     var body: some View {
         
@@ -23,7 +22,7 @@ struct AddTaskView: View {
                 .frame(minWidth: 100, maxWidth: 300, minHeight: 150)
             
             Button("Create", action:{
-                list.append(Task( taskDesc: inputText ))
+                list.append(Task( taskDesc: inputText))
 //                NSLog( "count " + String(list.count)  )
 //                NSLog( "Text is " + list[0].taskDesc  )
                 inputText = ""
@@ -33,9 +32,9 @@ struct AddTaskView: View {
     }
 }
 
-struct AddTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddTaskView( list: .constant([]))
-            .preferredColorScheme(.dark)
-    }
-}
+//struct AddTaskView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddTaskView( list: .constant([]))
+//            .preferredColorScheme(.dark)
+//    }
+//}

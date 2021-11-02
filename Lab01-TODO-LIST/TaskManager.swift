@@ -6,14 +6,12 @@
 //
 import Foundation
 
-class Task: Identifiable{
-    var id: UUID
+class Task:ObservableObject, Identifiable{
+    let id = UUID().uuidString
     var taskDesc: String = ""
-    var isActive: Bool = true
+    @Published var isActive: Bool = true
     
     init( taskDesc: String ){
-        self.id = UUID.init()
         self.taskDesc = taskDesc
-        self.isActive = true
     }
 }
