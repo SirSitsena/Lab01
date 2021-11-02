@@ -19,16 +19,16 @@ struct HistoryView: View {
             ForEach( list, id: \.id  ) {  task in
                 if !task.isActive{
                     HStack{
-                    Text(task.taskDesc)
-                    Button("Delete task", action:{
-                        var found: Int = 0
-                        for i in ( 0...list.count-1 ) {
-                            if list[i].id == task.id {
-                                found = i
+                        Text(task.taskDesc)
+                        Button("Delete task", action:{
+                            var found: Int = 0
+                            for i in ( 0...list.count-1 ) {
+                                if list[i].id == task.id {
+                                    found = i
+                                }
                             }
-                        }
-                        list.remove(at: found)
-                    })
+                            list.remove(at: found)
+                        })
                 }
                 }
                             

@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct ContentView: View {
-
     @State private var taskList: [Task] = []
     var body: some View {
         TabView {
