@@ -6,7 +6,7 @@
 //
 import Foundation
 
-class Task: Identifiable{
+class Task: ObservableObject, Identifiable{
     var id: UUID
     var taskDesc: String = ""
     var isActive: Bool = true
