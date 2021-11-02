@@ -21,7 +21,7 @@ struct HistoryView: View {
                     HStack{
                     Text(task.taskDesc)
                     Button("Delete task", action:{
-                        var found: Int = 0  // <= will hold the index if it was found, or else will be nil
+                        var found: Int = 0
                         for i in (0...list.count-1) {
                             if list[i].id == task.id {
                                 found = i
