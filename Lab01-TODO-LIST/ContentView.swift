@@ -9,8 +9,14 @@ import SwiftUI
 
 
 struct ContentView: View {
+
     @State private var taskList: [Task] = []
     var body: some View {
+
+            Text("ToDoList by Anestis")
+            .font(.largeTitle)
+            .italic()
+            .padding(.top, 30)
         TabView {
             AddTaskView(list: $taskList)
                 .tabItem {
