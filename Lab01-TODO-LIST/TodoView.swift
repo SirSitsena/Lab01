@@ -10,38 +10,38 @@ import SwiftUI
 struct TodoView: View {
     @Binding var list: [Task]
     var body: some View {
-        NavigationView{
-            VStack{
+        NavigationView {
+            List {
+                Text("Active tasks:")
+                .font(.largeTitle)
+                .italic()
+                .padding(15)
                 ForEach( list, id: \.id  ) {  task in
-                if task.isActive{
-                    VStack{
-                        HStack{
-                            
-                            Text(task.taskDesc)
-                            .font(.title)
-                            .frame(minWidth: 100, maxWidth: 300, minHeight: 15)
+                    if task.isActive {
+                            HStack {
+                                Text(task.taskDesc)
+                                .font(.title)
+                                .frame(minWidth: 100, maxWidth: 300)
 
-                            Button(action: {
-                                var found: Int = 0
-                                for i in (0...list.count-1) {
-                                    if list[i].id == task.id {
-                                        found = i
+                                Button(action: {
+                                    var found: Int = 0
+                                    for i in (0...list.count-1) {
+                                        if list[i].id == task.id {
+                                            found = i
+                                        }
                                     }
-                                }
-                                list[found].isActive = false
-                                list.append(Task( taskDesc: "garbage")) //Creates a new task and then
-                                list.remove(at: list.count-1)           //deletes it to refresh the view
-                            }) {
-                                HStack {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .resizable()
-                                        .frame(width: 32.0, height: 32.0)
-                                }
-                        }
-                        
-                        }
-
-                        }
+                                    list[found].isActive = false
+                                    list.append(Task( taskDesc: "garbage")) //Creates a new task and then
+                                    list.remove(at: list.count-1)           //deletes it to refresh the view
+                                }) {
+                                    HStack {
+                                        Image(systemName: "checkmark.circle")
+                                            .resizable()
+                                            .frame(width: 32.0, height: 32.0)
+                                    }
+                            }
+                            
+                            }
                     }
                 }
             }

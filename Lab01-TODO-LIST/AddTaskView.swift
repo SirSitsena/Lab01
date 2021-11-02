@@ -27,15 +27,22 @@ struct AddTaskView: View {
 
     var body: some View {
         
+
+        
             VStack{
+                Text("Create a new task")
+                .font(.largeTitle)
+                .italic()
+                .padding(.bottom, 80)
 
                 TextField("Enter the task", text: $inputText, onCommit:{
                 } )
                     .font(.title)
                     .multilineTextAlignment(.center)
                     .frame(minWidth: 100, maxWidth: 300, minHeight: 50)
+                    .padding(.bottom, 100)
                 
-                Button("Create", action:{
+                Button("Let's do it!", action:{
                     if !inputCheck(inputText: inputText) {
                         list.append(Task( taskDesc: inputText))
                         inputText = ""
