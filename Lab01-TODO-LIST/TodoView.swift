@@ -8,30 +8,43 @@
 import SwiftUI
 
 struct TodoView: View {
-    @Binding  var list: [Task]
+    @Binding var list: [Task]
     var body: some View {
         
-        VStack{
+        NavigationView{
+
+            VStack{
+                ForEach( list, id: \.id  ) {  task in
+                if task.isActive{
+                    VStack{
+                            Text(task.taskDesc)
+                            Button("Mark as done", action:{
+                                var found: Int = 0
+                                for i in (0...list.count-1) {
+                                    if list[i].id == task.id {
+                                        found = i
+                                    }
+                                }
+                                list[found].isActive = false
+                                list.append(Task( taskDesc: "garbage")) //Creates a new task and then
+                                list.remove(at: list.count-1)           //deletes it to trigger refresh
+                            })
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 //            Button("Show", action: {
 //                list.forEach{ task in
 //                    NSLog("" + task.taskDesc)
 //                }
 //            })
-            ForEach( list, id: \.id  ) {  task in
-                if task.isActive{
-                    Text(task.taskDesc)
-                }
-                            
-            }
-        }
-    }
-}
-                        //List(array, id: \.self) { item in
-                        //    Text(item.text)
-                        //}
 
-struct TodoView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoView( list: .constant([]))
-    }
-}
+//struct TodoView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoView( list: .constant([]))
+//    }
+//}
