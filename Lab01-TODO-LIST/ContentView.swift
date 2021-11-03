@@ -5,12 +5,11 @@
 //  Created by Anestis Cheimonettos on 2021-10-29.
 //
 import SwiftUI
-
+import Combine
 
 
 struct ContentView: View {
-
-    @State private var taskList: [Task] = []
+    @StateObject public var list = TaskStorage()
     var body: some View {
 
 //            Text("ToDoList by Anestis")
@@ -18,17 +17,17 @@ struct ContentView: View {
 //            .italic()
 //            .padding(.top, 30)
         TabView {
-            AddTaskView(list: $taskList)
+            AddTaskView(list: list)
                 .tabItem {
                     Text("NewTask")
                     Image(systemName: "pencil")
                 }
-            TodoView(list: $taskList)
+            TodoView(list: list)
                 .tabItem {
                     Text("TODO")
                     Image(systemName: "list.bullet")
                 }
-            HistoryView(list: $taskList)
+            HistoryView(list: list)
                 .tabItem {
                     Text("History")
                     Image(systemName: "tray.fill")

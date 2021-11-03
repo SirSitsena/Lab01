@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @Binding  var list: [Task]
+    @ObservedObject var list: TaskStorage
     var body: some View {
         NavigationView {
             List {
@@ -17,7 +17,7 @@ struct HistoryView: View {
                     .italic()
                     .padding(15)
                     .multilineTextAlignment(.center)
-                ForEach( list, id: \.id  ) {  task in
+                ForEach( list.taskList, id: \.id  ) {  task in
                     if !task.isActive {
                             HStack {
                                 Text(task.taskDesc)
@@ -26,12 +26,12 @@ struct HistoryView: View {
 
                                 Button(action: {
                                     var found: Int = 0
-                                    for i in (0...list.count-1) {
-                                        if list[i].id == task.id {
+                                    for i in (0...list.taskList.count-1) {
+                                        if list.taskList[i].id == task.id {
                                             found = i
                                         }
                                     }
-                                    list.remove(at: found)
+                                    list.taskList.remove(at: found)
                                 }) {
                                     HStack {
                                         Image(systemName: "minus.circle")

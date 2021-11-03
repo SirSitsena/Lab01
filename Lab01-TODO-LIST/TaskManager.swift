@@ -5,6 +5,7 @@
 //  Created by Anestis Cheimonettos on 2021-10-29.
 //
 import Foundation
+import Combine
 
 class Task:ObservableObject, Identifiable{
     let id = UUID().uuidString
@@ -16,4 +17,6 @@ class Task:ObservableObject, Identifiable{
     }
 }
 
-
+class TaskStorage: ObservableObject{
+    @Published var taskList: [Task] = []
+    }

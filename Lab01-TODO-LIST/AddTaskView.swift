@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AddTaskView: View {
     
@@ -23,7 +24,7 @@ struct AddTaskView: View {
     
     @State private var inputText: String = ""
     @State private var check: String = " "
-    @Binding  var list: [Task]    
+    @ObservedObject var list: TaskStorage
 
     var body: some View {
         
@@ -44,7 +45,7 @@ struct AddTaskView: View {
                 
                 Button("Let's do it!", action:{
                     if !inputCheck(inputText: inputText) {
-                        list.append(Task( taskDesc: inputText))
+                        list.taskList.append(Task( taskDesc: inputText))
                         inputText = ""
                     }
                     inputText = ""
