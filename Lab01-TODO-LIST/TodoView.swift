@@ -24,7 +24,7 @@ struct TodoView: View {
                                 .frame(minWidth: 100, maxWidth: 300)
 
                                 Button(action: {
-                                    withAnimation(.easeInOut(duration: 2.0)){
+                                    withAnimation(.easeIn(duration: 2.0)){
                                         var found: Int = 0
                                         for i in (0...list.taskList.count-1) {
                                             if list.taskList[i].id == task.id {

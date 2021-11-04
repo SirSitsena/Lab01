@@ -34,14 +34,20 @@ struct AddTaskView: View {
                 Text("Create a new task")
                 .font(.largeTitle)
                 .italic()
-                .padding(.bottom, 80)
+                .padding(.top, 10)
+                
+                
+                
+                Image("waifu")
+                    .resizable()
+                    .scaledToFit()
 
                 TextField("Enter the task", text: $inputText, onCommit:{
                 } )
                     .font(.title)
                     .multilineTextAlignment(.center)
                     .frame(minWidth: 100, maxWidth: 300, minHeight: 50)
-                    .padding(.bottom, 100)
+                    .padding(.bottom, 20)
                 
                 Button("Let's do it!", action:{
                     if !inputCheck(inputText: inputText) {
@@ -51,6 +57,7 @@ struct AddTaskView: View {
                     inputText = ""
                 })
                     .font(.title3)
+                    .padding(.bottom, 50)
             }
         
         
